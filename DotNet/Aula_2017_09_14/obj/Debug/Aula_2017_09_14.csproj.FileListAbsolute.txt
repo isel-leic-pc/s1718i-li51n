@@ -1,0 +1,6 @@
+C:\home\Disciplinas\PC\1s2017-2018\src\aulas\DotNet\Aula_2017_09_14\bin\Debug\Aula_2017_09_14.exe.config
+C:\home\Disciplinas\PC\1s2017-2018\src\aulas\DotNet\Aula_2017_09_14\bin\Debug\Aula_2017_09_14.exe
+C:\home\Disciplinas\PC\1s2017-2018\src\aulas\DotNet\Aula_2017_09_14\bin\Debug\Aula_2017_09_14.pdb
+C:\home\Disciplinas\PC\1s2017-2018\src\aulas\DotNet\Aula_2017_09_14\obj\Debug\Aula_2017_09_14.csprojResolveAssemblyReference.cache
+C:\home\Disciplinas\PC\1s2017-2018\src\aulas\DotNet\Aula_2017_09_14\obj\Debug\Aula_2017_09_14.exe
+C:\home\Disciplinas\PC\1s2017-2018\src\aulas\DotNet\Aula_2017_09_14\obj\Debug\Aula_2017_09_14.pdb
