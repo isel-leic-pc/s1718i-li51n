@@ -20,9 +20,8 @@ namespace Aula_2017_09_14
         public void Test()
         {
             // force same CPU (1) for test threads
-            Process.GetCurrentProcess().ProcessorAffinity = new IntPtr(1);
-
-            
+            Process.GetCurrentProcess().ProcessorAffinity = 
+                new IntPtr(1);
 
             // Create 2 threads for test
             Thread t1 = new Thread(ThreadFunc) ;
