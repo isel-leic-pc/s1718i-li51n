@@ -40,7 +40,7 @@ public class CounterSemaphore2 {
         }
     }
 
-    // piblic interface
+    // public interface
 
     public CounterSemaphore2(int initial) {
         units = initial;
@@ -85,7 +85,7 @@ public class CounterSemaphore2 {
                         monitor.wait(timeout);
                     if (atFront() == req && units > n) {
                         // if we are at the front of the queue and there are sufficient units all is ok!
-                        requests.remove(req);
+                        requests.remove(0);
                         units -= n;
                         return true;
                     }
@@ -94,6 +94,8 @@ public class CounterSemaphore2 {
                     if (timeout == 0) {
                         // end operation on timeout
                         // because queue state change a broadcast notification is needed
+                        // note the remove operation is O(n). If this is a performance concern
+                        // we must use a list implementation where we can access nodes
                         requests.remove(req);
                         notifyWaiters();
                         return false;
@@ -102,6 +104,8 @@ public class CounterSemaphore2 {
                 } catch (InterruptedException e) {
                     // operation interrupted
                     // because queue state change a broadcast notification is needed
+                    // note the remove operation is O(n). If this is a performance concern
+                    // we must use a list implementation where we can access nodes
                     requests.remove(req);
                     notifyWaiters();
                     throw e;

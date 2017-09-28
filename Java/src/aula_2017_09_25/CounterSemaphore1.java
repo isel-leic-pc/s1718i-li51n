@@ -32,7 +32,6 @@ public class CounterSemaphore1 {
             units += n;
             monitor.notifyAll();
         }
-
     }
 
     /**
@@ -56,7 +55,7 @@ public class CounterSemaphore1 {
                 // fail!
                 return false;
             }
-            // needs blocking
+            // enter wait loop
             do {
                 long refTime = System.currentTimeMillis();
                 if (timeout == INFINITE)

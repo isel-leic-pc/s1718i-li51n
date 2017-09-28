@@ -44,14 +44,15 @@ public class CounterSemaphore3{
     private void doRelease(int n) {
         int waked = 0;
         units += n;
-        while(requests.size() == 0) {
+        while(requests.size() > 0) {
             Request r = requests.get(0);
             if (units < r.reqUnits ) return;
             units -= r.reqUnits;
             r.done = true;
             requests.remove(0);
         };
-        if (waked > 0) monitor.notifyAll();
+        if (waked > 0)
+            monitor.notifyAll();
     }
 
     // public interface
@@ -81,31 +82,46 @@ public class CounterSemaphore3{
             do {
                 try {
                     long refTime = System.currentTimeMillis();
-                    monitor.wait();
+                    if (timeout == INFINITE)
+                        monitor.wait();
+                    else
+                        monitor.wait(timeout);
                     // If request.done there is nothing to do by the waiter.
                     // Just return success
                     if (req.done) return true;
                     timeout = remainingTimeout(refTime, timeout);
-                    if (timeout == 0)
-                        // timeout ocurrs
+                    if (timeout == 0) {
+                        // Timeout occurs, we must remove ourselves from queue
+                        // note the remove operation is O(n). If this is a performance concern
+                        // we must use a list implementation where we can access nodes
+                        requests.remove(req);
+                        // But since the queue change, we must try release other waiters
+
+                        doRelease(0);
                         return false;
+                    }
                 } catch (InterruptedException e) {
                     if (req.done) {
-                        // Now, we have to possibilities, return with success delaying the interrution, or
-                        // undo the operation and rethrow exception.
-                        // With execution delegation the first is always possible and is used on the majority of cases
-                        // but sometimes the second (undo) is possible and even desirable. The semaphore is such a case.
-                        // to undo just use auxiliary method doRelease
+                        // Now, we have two possibilities:
+                        //      a) return with success delaying the interruption, or
+                        //      b) undo the operation and rethrow exception.
+                        // With execution delegation the option a) is always possible and is used on the majority of cases,
+                        // but sometimes the option b) (undo) is possible and even desirable. The semaphore is such a case.
+                        // To undo just use auxiliary method doRelease
                         doRelease(n);
 
-                        // if we use the first option (return with success delaying the interruption
+                        // if we use the first option (return with success delaying the interruption)
                         // the code was simply:
                         // Thread.currentThread().interrupt();
                         // return true;
                     } else {
-                        // if done is false the request still is in the requests queue
-                        // we must remove it before rethrow exception
+                        // If done is false the request still is in the requests queue.
+                        // We must remove it before rethrow exception
+                        // note the remove operation is O(n). If this is a performance concern
+                        // we must use a list implementation where we can access nodes
                         requests.remove(req);
+                        // But since the queue change, we must try release other waiters
+                        doRelease(0);
                     }
                     throw e;
                 }
