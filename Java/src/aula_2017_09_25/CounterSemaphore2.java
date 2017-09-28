@@ -63,7 +63,7 @@ public class CounterSemaphore2 {
     public boolean acquire(int n, long timeout) throws InterruptedException {
         synchronized (monitor) {
             // fast path to success or fail
-            if (requests.size() == 0 && units > n) {
+            if (requests.size() == 0 && units >= n) {
                 // note the requests queue must be empty to avoid barging
                 units -= n;
                 return true;
@@ -83,7 +83,7 @@ public class CounterSemaphore2 {
                         monitor.wait();
                     else
                         monitor.wait(timeout);
-                    if (atFront() == req && units > n) {
+                    if (atFront() == req && units >= n) {
                         // if we are at the front of the queue and there are sufficient units all is ok!
                         requests.remove(0);
                         units -= n;
