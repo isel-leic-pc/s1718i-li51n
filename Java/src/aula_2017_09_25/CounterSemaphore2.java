@@ -125,6 +125,5 @@ public class CounterSemaphore2 {
         acquire(n, INFINITE);
     }
 
-
 }
 

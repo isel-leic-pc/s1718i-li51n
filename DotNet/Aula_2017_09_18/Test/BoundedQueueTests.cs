@@ -45,7 +45,7 @@ namespace Aula_2017_09_18.Test
 
          
         [Test]
-        public void TestTransfer1To10ViaBoundedBuffer()
+        public void TestTransfer1To10ViaBoundedQueue()
         {
             int[] sendingNumbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int[] receivedNumbers = new int[10];
