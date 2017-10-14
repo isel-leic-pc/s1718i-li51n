@@ -10,12 +10,12 @@ namespace Utils
         }
 
 
-        private static bool EnterUninterruptible(object obj, out bool interrupted) {
+        private static void EnterUninterruptible(object obj, out bool interrupted) {
             interrupted = false;
             do {
                 try {
                     Monitor.Enter(obj);
-
+                    return;
                 }
                 catch (ThreadInterruptedException) {
                     interrupted = true;
@@ -24,9 +24,10 @@ namespace Utils
             while (true);
         }
 
-        public static void Wait(this object monitor, object cond, int timeout) {
+        public static void Await(this object monitor, object cond, int timeout) {
             if (monitor == cond) {
                 Monitor.Wait(monitor, timeout);
+                return;
             }
             Monitor.Enter(cond);
             Monitor.Exit(monitor);
@@ -43,7 +44,7 @@ namespace Utils
         }
 
         public static void Wait(this object monitor, object cond) {
-            monitor.Wait(cond, Timeout.Infinite);
+            monitor.Await(cond, Timeout.Infinite);
         }
 
         public static void Signal(this object monitor, object cond) {

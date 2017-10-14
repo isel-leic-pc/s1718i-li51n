@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C381CBB7-0E97-490C-9DEA-D4E24C355391}</ProjectGuid>
+    <ProjectGuid>{1EA22644-8FEF-4AE9-A2D8-C3F0E50A6B1F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exercicios1</RootNamespace>
-    <AssemblyName>Exercicios1</AssemblyName>
+    <RootNamespace>Aula_2017_10_12</RootNamespace>
+    <AssemblyName>Aula_2017_10_12</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,11 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoResetEvt.cs" />
-    <Compile Include="Combiner.cs" />
-    <Compile Include="Exchanger.cs" />
-    <Compile Include="FutureHolder.cs" />
-    <Compile Include="PhasedGate.cs" />
+    <Compile Include="CounterSemaphoreTests.cs" />
+    <Compile Include="CounterSemaphoreEN.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +61,9 @@
       <Project>{64e1f09e-c0ff-469d-bcbf-29add1e0e89b}</Project>
       <Name>Utils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
