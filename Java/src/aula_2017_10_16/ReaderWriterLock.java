@@ -107,6 +107,7 @@ public class ReaderWriterLock  {
                         return true;
                     }
                     waitingReaders.remove(r);
+
                     throw e;
                 }
 
@@ -120,7 +121,8 @@ public class ReaderWriterLock  {
     public void startWrite() throws InterruptedException {
         monitor.lock();
         try {
-            if (!writing && readers == 0 && waitingWriters.size() == 0) {
+            if (!writing && readers == 0 &&
+                    waitingWriters.size() == 0) {
                 // note the FIFO discipline on write lock aquisition
                 writing = true;
                 return;
@@ -141,6 +143,8 @@ public class ReaderWriterLock  {
                         return;
                     }
                     waitingWriters.remove(r);
+                    if (!writing && waitingWriters.size() ==0)
+                        tryAwakeReaders();
                     throw e;
                 }
             }

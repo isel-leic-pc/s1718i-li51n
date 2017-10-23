@@ -12,76 +12,76 @@ import static utils.SynchUtils.remainingTimeout;
 public class Combiner<L,R>  {
     private Object monitor = new Object(); // the monitor object
 
-    private List<Pair> pairs; // queue for incompleted pairs
-    private List<Object> waiters; // queue for pair waiters
-
-    /**
-     * auxiliary function to identify a completed pair
-     * @return true if the front pair is completed, false otherwise
-     */
-    private boolean pairCompleted() {
-        return  pairs.size() > 0    && pairs.get(0).isCompleted();
+    // auxiliary class for mantaining left/right offers
+    private class Offer  {
+        private L offerL;
+        private R offerR;
     }
 
+    private List<Offer> lOffers;    // queue for L offers
+    private List<Offer> rOffers;    // queue for R offers
+
+    private List<Object> waiters;   // pair Waiters
+    private List<Pair> pairs;       // completed pairs
+
     public Combiner() {
-        pairs = new LinkedList<Pair>();
-        waiters = new LinkedList<Object>();
+        lOffers = new LinkedList<>();
+        rOffers = new LinkedList<>();
+        waiters = new LinkedList<>();
+        pairs = new LinkedList<>();
     }
 
     /**
      * Inner class for pair holding
      */
-    private class Pair {
-        private L left;
-        private R right;
+    public class Pair {
+        public final L left;
+        public final R right;
 
-        private Pair addLeft(L  left ){ this.left = left; return this; }
-        private Pair addRight(R  left ){ this.right = right; return this; }
-
-        private boolean isCompleted() {
-            return left != null && right != null;
+        private Pair(L left, R right) {
+            this.left = left; this.right = right;
         }
 
-        public L getLeft() { return left; }
-        public R getRight() { return right; }
     }
 
-
     public void PutLeft(L left) {
+
         synchronized(monitor) {
-            Pair p;
-            // check if the front pair can be completed!
-            if (pairs.size() > 0) {
-                p = pairs.get(0);
-                if (p.left == null) {
-                    p.left = left;
-                    monitor.notifyAll(); // the front pair is completed!
-                    return;
+            // check if the there are rOffers!
+            if (rOffers.size() > 0) {
+                Offer o = rOffers.remove(0);
+                pairs.add(new Pair(left, o.offerR));
+                if (waiters.size() > 0) {
+                    monitor.notifyAll(); // the front requested pair is completed!
+
                 }
             }
-
-            // if not, insert a new pair on the list
-            pairs.add(new Pair().addLeft(left));
-
+            else {
+                Offer lo = new Offer();
+                lo.offerL = left;
+                lOffers.add(lo);
+            }
         }
     }
 
     public void PutRight(R right) {
-        synchronized(monitor)
-        {
-            // check if the front pair can be completed!
-            if (pairs.size() > 0)  {
-                Pair p = pairs.get(0);
-                if (p.right == null)
-                {
-                    p.right = right;
-                    monitor.notifyAll(); // the front pair is completed!
+        synchronized(monitor) {
+            // check if the there are lOffers!
+            if (lOffers.size() > 0) {
+                Offer o = lOffers.remove(0);
+                pairs.add(new Pair(o.offerL, right));
+                if (waiters.size() > 0) {
+                    monitor.notifyAll(); // the front requested pair is completed!
                     return;
                 }
-            }
+                // if not, insert a new pair on the list
 
-            // insert a new pair on the list
-            pairs.add(new Pair().addRight(right));
+            }
+            else {
+                Offer ro = new Offer();
+                ro.offerR = right;
+                rOffers.add(ro);
+            }
         }
     }
 
@@ -91,7 +91,7 @@ public class Combiner<L,R>  {
         synchronized(monitor)
         {
             // fast path
-            if (waiters.size() == 0 /* avoid barging */ && pairCompleted() )
+            if (waiters.size() == 0 /* avoid barging */ && pairs.size() > 0 )
                 return  pairs.remove(0);
             if (timeout == 0)
                 return null;
@@ -107,7 +107,7 @@ public class Combiner<L,R>  {
                         monitor.wait();
                     else
                         monitor.wait(timeout);
-                    if (waiters.get(0) == req && pairCompleted())
+                    if (waiters.get(0) == req && pairs.size() > 0)
                         return pairs.remove(0);
 
                     timeout =  remainingTimeout(refTime, timeout);
