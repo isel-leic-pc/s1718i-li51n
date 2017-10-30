@@ -12,14 +12,8 @@ import static utils.SynchUtils.remainingTimeout;
 public class Combiner<L,R>  {
     private Object monitor = new Object(); // the monitor object
 
-    // auxiliary class for mantaining left/right offers
-    private class Offer  {
-        private L offerL;
-        private R offerR;
-    }
-
-    private List<Offer> lOffers;    // queue for L offers
-    private List<Offer> rOffers;    // queue for R offers
+    private List<L> lOffers;    // queue for L offers
+    private List<R> rOffers;    // queue for R offers
 
     private List<Object> waiters;   // pair Waiters
     private List<Pair> pairs;       // completed pairs
@@ -28,7 +22,7 @@ public class Combiner<L,R>  {
         lOffers = new LinkedList<>();
         rOffers = new LinkedList<>();
         waiters = new LinkedList<>();
-        pairs = new LinkedList<>();
+        pairs =   new LinkedList<>();
     }
 
     /**
@@ -49,17 +43,15 @@ public class Combiner<L,R>  {
         synchronized(monitor) {
             // check if the there are rOffers!
             if (rOffers.size() > 0) {
-                Offer o = rOffers.remove(0);
-                pairs.add(new Pair(left, o.offerR));
+                R r  = rOffers.remove(0);
+                pairs.add(new Pair(left, r));
                 if (waiters.size() > 0) {
                     monitor.notifyAll(); // the front requested pair is completed!
 
                 }
             }
             else {
-                Offer lo = new Offer();
-                lo.offerL = left;
-                lOffers.add(lo);
+                lOffers.add(left);
             }
         }
     }
@@ -68,8 +60,8 @@ public class Combiner<L,R>  {
         synchronized(monitor) {
             // check if the there are lOffers!
             if (lOffers.size() > 0) {
-                Offer o = lOffers.remove(0);
-                pairs.add(new Pair(o.offerL, right));
+                L l = lOffers.remove(0);
+                pairs.add(new Pair(l, right));
                 if (waiters.size() > 0) {
                     monitor.notifyAll(); // the front requested pair is completed!
                     return;
@@ -78,9 +70,7 @@ public class Combiner<L,R>  {
 
             }
             else {
-                Offer ro = new Offer();
-                ro.offerR = right;
-                rOffers.add(ro);
+                rOffers.add(right);
             }
         }
     }
