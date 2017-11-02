@@ -11,8 +11,8 @@ import static utils.SynchUtils.remainingTimeout;
 
 public class ManualResetEvent {
     private Object monitor = new Object();      // the monitor
-    private boolean signaled;       // the event state
-    private int waiters;            // threads waiting for sinalization
+    private  boolean signaled;       // the event state
+    private  int waiters;            // threads waiting for sinalization
     private int signalVersion;                  // to support batch notification
 
     public ManualResetEvent(boolean initialState) {

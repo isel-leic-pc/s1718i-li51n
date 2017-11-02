@@ -27,7 +27,7 @@ public class ManualResetEventTests {
     }
     private static final int PARTS = 11;
     private static final int WAITERS = PARTS -1;
-    private static final int NROUNDS=20000;
+    private static final int NROUNDS=200000;
     private static final int WAIT_ROUND_TIMEOUT= 10000;
     private static final int TRIES= 100;
 
@@ -66,8 +66,9 @@ public class ManualResetEventTests {
 
             for(int r = 0; r < NROUNDS && res.ok(); ++r) {
                 try {
-                    cb.await(WAIT_ROUND_TIMEOUT, TimeUnit.MILLISECONDS);
                     cdl = new CountDownLatch(WAITERS);
+                    cb.await(WAIT_ROUND_TIMEOUT, TimeUnit.MILLISECONDS);
+
                     mre.set();
                     if (!cdl.await(WAIT_ROUND_TIMEOUT, TimeUnit.MILLISECONDS))
                         res.setterExceptionOnBarrier = true;

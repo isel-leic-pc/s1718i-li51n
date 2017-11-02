@@ -30,7 +30,8 @@ namespace Aula_2017_10_26.LockFree {
 
                 waiters++;
                 // fast (non blocking)  path
-                
+                Thread.MemoryBarrier();
+
                 // !!!
                 
                 if (signaled) {
@@ -64,7 +65,7 @@ namespace Aula_2017_10_26.LockFree {
             if (!signaled) {
 
                 signaled = true;
-
+                Thread.MemoryBarrier();
                 // !!!
                 
                 if (waiters > 0) {
