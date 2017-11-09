@@ -40,7 +40,7 @@ namespace Aula_2017_10_30.Lock_free {
               
                 while (true) {
                     waiters++;
-
+                    Thread.MemoryBarrier();
                     // There is a need for a barrier between  waiters increment
                     // and permites read in TryAquire!
                     // And none exists :( ...
