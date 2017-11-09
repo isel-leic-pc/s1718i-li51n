@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfdda384-ae7d-4253-a7f4-09bb0e90c6f5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aula_2017_11_02/LFStack.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aula_2017_11_06/VariableRange.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/.vs/DotNet/v14/.suo" afterPath="$PROJECT_DIR$/../DotNet/.vs/DotNet/v14/.suo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/bin/Debug/Aula_2017_09_14.exe" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/bin/Debug/Aula_2017_09_14.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/bin/Debug/Aula_2017_09_14.pdb" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/bin/Debug/Aula_2017_09_14.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/obj/Debug/Aula_2017_09_14.exe" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/obj/Debug/Aula_2017_09_14.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/obj/Debug/Aula_2017_09_14.pdb" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/obj/Debug/Aula_2017_09_14.pdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_10_30/Aula_2017_10_30.csproj" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_10_30/Aula_2017_10_30.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_10_30/Lock_free/Semaphore.cs" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_10_30/Lock_free/Semaphore.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/DotNet.sln" afterPath="$PROJECT_DIR$/../DotNet/DotNet.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aula_2017_10_30/Semaphore.java" afterPath="$PROJECT_DIR$/src/aula_2017_10_30/Semaphore.java" />
     </list>
     <ignored path="Java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,7 +87,7 @@
       <file leaf-file-name="Semaphore.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula_2017_10_30/Semaphore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
+            <state relative-caret-position="1008">
               <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -107,11 +100,8 @@
         <entry file="file://$PROJECT_DIR$/src/aula_2017_11_02/LFStack.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-              <folding>
-                <element signature="e#180#181#0" expanded="true" />
-                <element signature="e#207#208#0" expanded="true" />
-              </folding>
+              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,8 +109,8 @@
       <file leaf-file-name="LFQueue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="683">
-              <caret line="66" column="62" lean-forward="false" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+            <state relative-caret-position="315">
+              <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -129,8 +119,8 @@
       <file leaf-file-name="VariableRange.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/VariableRange.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="147">
+              <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -225,8 +215,8 @@
         <option value="$PROJECT_DIR$/src/aula_2017_10_30/tests/SemaphoreTests.java" />
         <option value="$PROJECT_DIR$/src/aula_2017_10_30/Semaphore.java" />
         <option value="$PROJECT_DIR$/src/aula_2017_11_02/LFStack.java" />
-        <option value="$PROJECT_DIR$/src/aula_2017_11_06/VariableRange.java" />
         <option value="$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java" />
+        <option value="$PROJECT_DIR$/src/aula_2017_11_06/VariableRange.java" />
       </list>
     </option>
   </component>
@@ -1047,7 +1037,7 @@
       <workItem from="1509637666688" duration="3174000" />
       <workItem from="1509646245853" duration="2766000" />
       <workItem from="1509992989822" duration="6452000" />
-      <workItem from="1510153971321" duration="1230000" />
+      <workItem from="1510153971321" duration="2977000" />
     </task>
     <servers />
   </component>
@@ -1084,10 +1074,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133387000" />
+    <option name="totallyTimeSpent" value="135134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1451,7 +1442,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aula_2017_10_30/Semaphore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
+        <state relative-caret-position="1008">
           <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1459,18 +1450,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/VariableRange.java">
+    <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="315">
+          <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/VariableRange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="66" column="62" lean-forward="false" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+        <state relative-caret-position="147">
+          <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1478,11 +1469,8 @@
     <entry file="file://$PROJECT_DIR$/src/aula_2017_11_02/LFStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="e#180#181#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-          </folding>
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
