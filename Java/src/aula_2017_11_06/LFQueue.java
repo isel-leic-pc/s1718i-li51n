@@ -21,7 +21,6 @@ public class LFQueue<T> {
             this();
             this.item = item;
         }
-
     }
 
     private AtomicReference<Node> head;

@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfdda384-ae7d-4253-a7f4-09bb0e90c6f5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/threadpoolmonitor/MyOptions.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/threadpoolmonitor/ThreadPoolMonitor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/threadpoolmonitor/optbuild/Option.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/threadpoolmonitor/optbuild/OptionDescriptor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/threadpoolmonitor/optbuild/Options.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/.vs/DotNet/v14/.suo" afterPath="$PROJECT_DIR$/../DotNet/.vs/DotNet/v14/.suo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/bin/Debug/Aula_2017_09_14.exe" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/bin/Debug/Aula_2017_09_14.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/bin/Debug/Aula_2017_09_14.pdb" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/bin/Debug/Aula_2017_09_14.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/obj/Debug/Aula_2017_09_14.exe" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/obj/Debug/Aula_2017_09_14.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/obj/Debug/Aula_2017_09_14.pdb" afterPath="$PROJECT_DIR$/../DotNet/Aula_2017_09_14/obj/Debug/Aula_2017_09_14.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DotNet/DotNet.sln" afterPath="$PROJECT_DIR$/../DotNet/DotNet.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java" afterPath="$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java" />
     </list>
     <ignored path="Java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,66 +35,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ManualResetEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula_2017_10_16/ManualResetEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CyclicBarrier.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula_2017_10_19/CyclicBarrier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1113">
-              <caret line="53" column="63" lean-forward="false" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManualResetEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula_2017_10_26/ManualResetEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CounterSemaphoreEN.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula_2017_10_12/CounterSemaphoreEN.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BoundedQueueEN.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula_2017_10_12/BoundedQueueEN.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1533">
-              <caret line="84" column="80" lean-forward="false" selection-start-line="84" selection-start-column="80" selection-end-line="84" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Semaphore.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula_2017_10_30/Semaphore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
+            <state relative-caret-position="1575">
               <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,12 +47,79 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LFStack.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LFStack.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula_2017_11_02/LFStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="42">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadPoolMonitor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/ThreadPoolMonitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="535">
+              <caret line="314" column="54" lean-forward="false" selection-start-line="314" selection-start-column="54" selection-end-line="314" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1145#1165#0" expanded="true" />
+                <element signature="e#2320#2519#0" expanded="true" />
+                <element signature="e#2518#2519#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptionDescriptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/optbuild/OptionDescriptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Option.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/optbuild/Option.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Options.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/optbuild/Options.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-241">
+              <caret line="125" column="69" lean-forward="false" selection-start-line="125" selection-start-column="69" selection-end-line="125" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2241#2242#0" expanded="true" />
+                <element signature="e#2270#2271#0" expanded="true" />
+                <element signature="e#2319#2320#0" expanded="true" />
+                <element signature="e#2387#2388#0" expanded="true" />
+                <element signature="e#3374#3375#0" expanded="true" />
+                <element signature="e#3411#3412#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyOptions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/MyOptions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="693">
+              <caret line="54" column="40" lean-forward="false" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,8 +127,8 @@
       <file leaf-file-name="LFQueue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            <state relative-caret-position="357">
+              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -166,11 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/syncronizers/BoundedBuffer.java" />
-        <option value="$PROJECT_DIR$/src/tests/BoundBufferTests.java" />
-        <option value="$PROJECT_DIR$/src/syncronizers/BoundedQueue.java" />
-        <option value="$PROJECT_DIR$/src/tests/BoundQueueTests.java" />
-        <option value="$PROJECT_DIR$/src/monitors/SingleResource.java" />
         <option value="$PROJECT_DIR$/src/monitors/BoundedQueue.java" />
         <option value="$PROJECT_DIR$/src/aula_2017_09_21/monitors/BoundedQueue.java" />
         <option value="$PROJECT_DIR$/src/utils/SynchUtils.java" />
@@ -215,8 +228,13 @@
         <option value="$PROJECT_DIR$/src/aula_2017_10_30/tests/SemaphoreTests.java" />
         <option value="$PROJECT_DIR$/src/aula_2017_10_30/Semaphore.java" />
         <option value="$PROJECT_DIR$/src/aula_2017_11_02/LFStack.java" />
-        <option value="$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java" />
         <option value="$PROJECT_DIR$/src/aula_2017_11_06/VariableRange.java" />
+        <option value="$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java" />
+        <option value="$PROJECT_DIR$/src/threadpoolmonitor/optbuild/Option.java" />
+        <option value="$PROJECT_DIR$/src/threadpoolmonitor/optbuild/OptionDescriptor.java" />
+        <option value="$PROJECT_DIR$/src/threadpoolmonitor/optbuild/Options.java" />
+        <option value="$PROJECT_DIR$/src/threadpoolmonitor/MyOptions.java" />
+        <option value="$PROJECT_DIR$/src/threadpoolmonitor/ThreadPoolMonitor.java" />
       </list>
     </option>
   </component>
@@ -226,10 +244,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -249,10 +268,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -343,19 +361,20 @@
               <item name="Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="exercicios1" type="462c0819:PsiDirectoryNode" />
+              <item name="threadpoolmonitor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="exercicios1" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="threadpoolmonitor" type="462c0819:PsiDirectoryNode" />
+              <item name="optbuild" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1037,7 +1056,10 @@
       <workItem from="1509637666688" duration="3174000" />
       <workItem from="1509646245853" duration="2766000" />
       <workItem from="1509992989822" duration="6452000" />
-      <workItem from="1510153971321" duration="2977000" />
+      <workItem from="1510153971321" duration="5128000" />
+      <workItem from="1510826092634" duration="869000" />
+      <workItem from="1510844598838" duration="451000" />
+      <workItem from="1510941067532" duration="715000" />
     </task>
     <servers />
   </component>
@@ -1074,11 +1096,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135134000" />
+    <option name="totallyTimeSpent" value="139320000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1094,7 +1115,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20885417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2328125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1161,35 +1182,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/aula_2017_09_21/monitors/SingleResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aula_2017_09_21/monitors/BoundedQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aula_2017_09_21/monitors/SingleResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aula_2017_09_21/monitors/BoundedQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syncronizers/BoundedQueue.java" />
     <entry file="file://$PROJECT_DIR$/src/tests/BoundQueueTests.java" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1295,7 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9933">
           <caret line="500" column="22" lean-forward="false" selection-start-line="500" selection-start-column="22" selection-end-line="500" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1346,7 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1113">
           <caret line="55" column="41" lean-forward="false" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1354,7 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1362,7 +1351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1380,7 +1368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,19 +1429,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aula_2017_10_30/Semaphore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
+        <state relative-caret-position="1575">
           <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1466,11 +1445,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/aula_2017_11_06/LFQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/aula_2017_11_02/LFStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="42">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/optbuild/Option.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/optbuild/OptionDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/optbuild/Options.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="125" column="69" lean-forward="false" selection-start-line="125" selection-start-column="69" selection-end-line="125" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2241#2242#0" expanded="true" />
+            <element signature="e#2270#2271#0" expanded="true" />
+            <element signature="e#2319#2320#0" expanded="true" />
+            <element signature="e#2387#2388#0" expanded="true" />
+            <element signature="e#3374#3375#0" expanded="true" />
+            <element signature="e#3411#3412#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/MyOptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="54" column="40" lean-forward="false" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/threadpoolmonitor/ThreadPoolMonitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="314" column="54" lean-forward="false" selection-start-line="314" selection-start-column="54" selection-end-line="314" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1145#1165#0" expanded="true" />
+            <element signature="e#2320#2519#0" expanded="true" />
+            <element signature="e#2518#2519#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
