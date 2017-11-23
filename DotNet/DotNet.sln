@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosLockFree_ExamesAn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolMonitor", "ThreadPoolMonitor\ThreadPoolMonitor.csproj", "{441C3C60-9AA4-4A3E-806D-B3881CDA303D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula_2017_11_20", "Aula_2017_11_20\Aula_2017_11_20.csproj", "{104A2FFC-84A7-473E-ACC5-391ECB88EEF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{441C3C60-9AA4-4A3E-806D-B3881CDA303D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{441C3C60-9AA4-4A3E-806D-B3881CDA303D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{441C3C60-9AA4-4A3E-806D-B3881CDA303D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104A2FFC-84A7-473E-ACC5-391ECB88EEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104A2FFC-84A7-473E-ACC5-391ECB88EEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104A2FFC-84A7-473E-ACC5-391ECB88EEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104A2FFC-84A7-473E-ACC5-391ECB88EEF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
