@@ -31,11 +31,11 @@ namespace Aula_2017_11_20 {
         }
 
         public static Task<bool> IsPrimeAsync(int p) {
-            Task<bool> t = new Task<bool>(() => {
+            return Task.Factory.StartNew(() => {
                 return IsPrime(p);
             });
-            t.Start();
-            return t;
+           
+           
         }
 
         public static bool AreAllPrimes(params int[] numbers) {

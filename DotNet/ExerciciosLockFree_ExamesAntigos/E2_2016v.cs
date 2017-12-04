@@ -13,9 +13,11 @@ namespace ExerciciosLockFree_ExamesAntigos {
             private class MsgHolder {
                 internal readonly M msg;
                 internal int lives;
+
+                internal MsgHolder(M msg, int lives) { this.msg = msg; this.lives = lives; }
             }
             private MsgHolder msgHolder = null;
-            public void Publish(M m, int lvs) { msgHolder = new MsgHolder { msg = m, lives = lvs }; }
+            public void Publish(M m, int lvs) { msgHolder = new MsgHolder(m, lvs); }
             public M TryConsume() {
                 if (msgHolder != null && msgHolder.lives > 0) {
                     msgHolder.lives -= 1;

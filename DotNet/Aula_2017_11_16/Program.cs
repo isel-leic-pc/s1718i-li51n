@@ -6,7 +6,7 @@ namespace Aula_2017_11_16 {
     public class AsyncInvokeTest {
 
         static bool isPrime(int n) {
-            throw new IndexOutOfRangeException();
+            
             Console.WriteLine("IsPrime thread:  {0}, fromThreadPool={1}",
                 Thread.CurrentThread.ManagedThreadId, Thread.CurrentThread.IsThreadPoolThread);
             if (n == 2) return true;
