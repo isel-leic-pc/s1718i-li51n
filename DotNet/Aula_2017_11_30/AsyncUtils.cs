@@ -14,9 +14,13 @@ namespace Aula_2017_11_30 {
             AsyncCallback cb_global = null;
             cb_global = ar => {
                 if (ar != null) {
+                    Console.WriteLine("EndWrite called in thread {0}, CompletedSynchronously is {1}",
+                        Thread.CurrentThread.ManagedThreadId, ar.CompletedSynchronously);
                     dest.EndWrite(ar);
                 }
                 src.BeginRead(buffer, 0, 4096, ar2 => {
+                    Console.WriteLine("EndRead called n thread {0}, CompletedSynchronously is {1}",
+                     Thread.CurrentThread.ManagedThreadId, ar2.CompletedSynchronously);
                     int nr = src.EndRead(ar2);
                     if (nr == 0) {
                         gar.SetResult(totalBytes);
