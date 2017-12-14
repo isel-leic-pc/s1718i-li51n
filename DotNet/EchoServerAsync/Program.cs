@@ -133,8 +133,8 @@ static class TcpEchoServerIOAsync {
     }
 
     /// <summary>
-    /// This is probably the simpler version but it is not efficent and scalable
-    /// since it is based on operation Task.WhenAny that as o O(N) Cost
+    /// This is probably the simpler version but it is not efficent and scalable too,
+    /// since it is based on operation Task.WhenAny that as an O(N) Cost
     /// </summary>
     /// <param name="server"></param>
     /// <param name="logger"></param>
@@ -166,22 +166,30 @@ static class TcpEchoServerIOAsync {
     }
 
     /// <summary>
-    /// This is probably the simpler version but it is not efficent and scalable
-    /// since it is based on operation Task.WhenAny that as o O(N) Cost
+    /// This is a good and simple solution based on semaphore asynchronizer,
+    /// that is a semaphore with an async wait operation.
+    /// In fact, this is avalable in .Net for the SemaphoreSlim class.
+    /// In general, the notion of asynchronizer is really usefull when building asyn code
+    /// where blocking threads is never good.
+    /// Unfortunately there no other asynchronizer available in .net framework
+    /// but is allways possible to build other, namely an event with async wait...
+    /// 
     /// </summary>
     /// <param name="server"></param>
     /// <param name="logger"></param>
     /// <returns></returns>
     static async Task ListenAsync2(TcpListener server, Logger logger) {
-        var sem = new SemaphoreSlim(MAX_ACTIVE_CONNECTIONS);
+        var availableAccepts = new SemaphoreSlim(MAX_ACTIVE_CONNECTIONS);
  
         do {
             try {
-                await sem.WaitAsync();
+                // The asynchronous "wait" for semaphore units
+                await availableAccepts.WaitAsync();
                 var client = await server.AcceptTcpClientAsync();
 
                 ProcessConnectionAsync(client, logger).ContinueWith(_ => {
-                    //sem.Release();
+                    // allways release
+                    availableAccepts.Release();
                 });
 
                 //
