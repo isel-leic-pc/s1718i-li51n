@@ -28,13 +28,14 @@
             this.name1 = new System.Windows.Forms.TextBox();
             this.name2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.status = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 195);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 183);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(329, 222);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -43,7 +44,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(378, 195);
+            this.pictureBox2.Location = new System.Drawing.Point(378, 183);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(293, 222);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -76,11 +77,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // status
+            // 
+            this.status.Location = new System.Drawing.Point(12, 414);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(659, 22);
+            this.status.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 448);
+            this.Controls.Add(this.status);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.name2);
             this.Controls.Add(this.name1);
@@ -102,6 +111,7 @@
         private System.Windows.Forms.TextBox name1;
         private System.Windows.Forms.TextBox name2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox status;
     }
 }
 

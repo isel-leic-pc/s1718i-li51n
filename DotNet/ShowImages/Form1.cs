@@ -43,18 +43,16 @@ namespace ShowImages {
                     Thread.CurrentThread.ManagedThreadId);
             Task<Image> t2 = Model.GetFromFileAsync(name2.Text);
          
-            Task.Factory.ContinueWhenAll(new Task<Image>[] { t1, t2 }, t => {
+            Task.WhenAll(new Task<Image>[] { t1, t2 }).
+                ContinueWith(t => {
 
                 Console.WriteLine("WhenAll continuation in thread {0}",
                     Thread.CurrentThread.ManagedThreadId);
                 
-                pictureBox1.Image = t[0].Result;
-                pictureBox2.Image = t[1].Result;
+                pictureBox1.Image = t.Result[0];
+                pictureBox2.Image = t.Result[1];
                
-           
-            }, CancellationToken.None, 
-            TaskContinuationOptions.None, 
-            TaskScheduler.FromCurrentSynchronizationContext());
+            }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private static Task WhenAll(Task[] tasks) {
@@ -77,7 +75,7 @@ namespace ShowImages {
             Task<Image> t2 = Model.GetFromFileAsync(name2.Text);
             var ctx = SynchronizationContext.Current;
 
-            WhenAll(new Task<Image>[] { t1, t2 }).ContinueWith(_ => {
+            Task.WhenAll(new Task<Image>[] { t1, t2 }).ContinueWith(_ => {
                 Console.WriteLine("WhenAll continuation in thread {0}",
                     Thread.CurrentThread.ManagedThreadId);
                 ctx.Post(s => {
@@ -86,10 +84,24 @@ namespace ShowImages {
                     pictureBox1.Image = t1.Result;
                     pictureBox2.Image = t2.Result;
                 },null);
-                
-            });
-            
-            
+            }, TaskScheduler.FromCurrentSynchronizationContext()); 
         }
+
+        private async void button3_Click(object sender, EventArgs e) {
+            Task<Image> t1 = Model.GetFromFileAsync(name1.Text);
+            Console.WriteLine("New Handler UI thread is {0}",
+                    Thread.CurrentThread.ManagedThreadId);
+            Task<Image> t2 = Model.GetFromFileAsync(name2.Text);
+            var tasks = new List<Task<Image>>(new Task<Image>[] { t1, t2 });
+            PictureBox[] imageBoxes = { pictureBox1, pictureBox2 };
+            int currentPicture = 0;
+            while (tasks.Count > 0) {
+                var task = await Task.WhenAny(tasks);
+
+                imageBoxes[currentPicture++].Image = task.Result;
+                tasks.Remove(task);
+            }
+        }
+
     }
 }

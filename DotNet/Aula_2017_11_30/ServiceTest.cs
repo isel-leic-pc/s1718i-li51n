@@ -30,7 +30,7 @@ namespace Aula_2017_11_30 {
             return svc.ObtainAvatarUri (userId); 
         }
 
-        IAsyncResult BeginGetUserAvatar(APM_Service svc, String name, String bdate,
+        public static IAsyncResult BeginGetUserAvatar(APM_Service svc, String name, String bdate,
             AsyncCallback cb, object state) {
             var gar = new GenericAsyncResult<Uri>(cb, state, false);
             
@@ -44,7 +44,7 @@ namespace Aula_2017_11_30 {
             return gar;
         }
 
-        Uri EndGetUserAvatar(IAsyncResult ar) {
+        public static Uri EndGetUserAvatar(IAsyncResult ar) {
             return ((GenericAsyncResult<Uri>)ar).Result;
         }
 
@@ -82,9 +82,24 @@ namespace Aula_2017_11_30 {
             var t = svc.FindUserIdAsync(name, bdate).
              ContinueWith(ant => {
                  return svc.ObtainAvatarUriAsync(ant.Result);
-             }).MyUnwrap();
+             }).Unwrap();
             return t;
         }
+
+        public static async Task<Uri> GetUserAvatar2Async(TAP_Service svc, String name, String bdate) {
+            var id = await svc.FindUserIdAsync(name, bdate);
+            
+            return await svc.ObtainAvatarUriAsync(id);
+                   
+        }
+
+        public static async void TestGetUserAvatar2Async(TAP_Service svc ) {
+            var task = GetUserAvatar2Async(svc, "João", "23/2/2000");
+            Uri result = await task;
+            Console.WriteLine(result);
+        }
+
+
 
     }
 }
