@@ -25,7 +25,7 @@ namespace Aula_2017_12_04 {
                     Console.WriteLine("Tack");
                 }
             }
-            catch (Exception e) {
+            catch (Exception ) {
             }
         }
 

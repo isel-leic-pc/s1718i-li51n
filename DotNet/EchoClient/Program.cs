@@ -61,7 +61,7 @@ class TcpEchoClient {
             Interlocked.Increment(ref requestCount);
             return true;
         }
-        catch (Exception ex) {
+        catch (Exception ) {
             //Console.WriteLine("***Exception:[{0}] {1}", requestMessage, ex.Message);
             return false;
         }

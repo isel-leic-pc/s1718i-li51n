@@ -18,15 +18,16 @@ static class TcpEchoServerIOAsync {
     private const int SERVER_PORT = 8888;
     private const int BUFFER_SIZE = 1024;
 
-    private const int MIN_SERVICE_TIME = 100;
-    private const int MAX_SERVICE_TIME = 1000;
+    private const int MIN_SERVICE_TIME = 300;
+    private const int MAX_SERVICE_TIME = 5000;
 
     //
     // Thread local random.
     //
 
     private static ThreadLocal<Random> tlr =
-                new ThreadLocal<Random>(() => new Random(Thread.CurrentThread.ManagedThreadId));
+                new ThreadLocal<Random>(
+                    () => new Random(Thread.CurrentThread.ManagedThreadId));
 
     //
     // Processes the connection represented by the specified TcpClient socket.
@@ -98,7 +99,7 @@ static class TcpEchoServerIOAsync {
     //
     // listen for connections.
     //
-    private const int MAX_ACTIVE_CONNECTIONS = 10;
+    private const int MAX_ACTIVE_CONNECTIONS = 1;
 
     /// <summary>
     /// This version creates "a priori" a pool of accepts
@@ -213,37 +214,43 @@ static class TcpEchoServerIOAsync {
     /// </summary>
     /// <param name="server"></param>
     /// <param name="logger"></param>
-    static void ListenAsyncOk(TcpListener server, Logger logger) {
+    static Task ListenAsyncOk(TcpListener server, Logger logger,
+        CancellationToken token) {
         int activeConnections = 0;
+        var proxyTask = new TaskCompletionSource<bool>();
+         
         Action<Task<TcpClient>> cont = null;
-       
         cont = (ant) => {
             try {
                 TcpClient client = ant.Result;
-
                 int currActive = Interlocked.Increment(ref activeConnections);
-                if (currActive < MAX_ACTIVE_CONNECTIONS) {
+                if ( !token.IsCancellationRequested &&
+                        currActive < MAX_ACTIVE_CONNECTIONS) {
                     server.AcceptTcpClientAsync().ContinueWith(cont);
                 }
                 ProcessConnectionAsync(client, logger).ContinueWith((ant2) => {
-                    if (Interlocked.Decrement(ref activeConnections) == MAX_ACTIVE_CONNECTIONS - 1) {
+                    if (!token.IsCancellationRequested &&
+                    Interlocked.Decrement(ref activeConnections) == MAX_ACTIVE_CONNECTIONS - 1) {
                         server.AcceptTcpClientAsync().ContinueWith(cont);
+                    } 
+                    else if (token.IsCancellationRequested &&
+                    Interlocked.Decrement(ref activeConnections) == 0) {
+                        proxyTask.SetResult(true);
                     }
-                   
                 }, TaskContinuationOptions.ExecuteSynchronously);
             }
             catch (SocketException sockex) {
                 logger.LogMessage(string.Format("***socket exception: {0}", sockex.Message));
             }
         };
-
-        server.AcceptTcpClientAsync().ContinueWith(cont);   
+        server.AcceptTcpClientAsync().ContinueWith(cont);
+        return proxyTask.Task;
     }
    
 
     static void Main() {
         TcpListener server = null;
-
+        CancellationTokenSource cts = new CancellationTokenSource();
         //
         // Create a listen socket bind to the server port.
         //
@@ -254,7 +261,7 @@ static class TcpEchoServerIOAsync {
         // Start listening for client requests.
         //
 
-        server.Start();
+        server.Start(20);
 
         Logger logger = new Logger();
         logger.Start();
@@ -263,7 +270,7 @@ static class TcpEchoServerIOAsync {
         //
         // Socket Listen as an async operation
         //
-        ListenAsync2(server, logger);
+        var listenTask = ListenAsyncOk(server, logger, cts.Token);
 
         //
         // Wait a <enter> from the console to terminate the server. 
@@ -275,13 +282,30 @@ static class TcpEchoServerIOAsync {
         //
         // Stop listening.
         //
+        int ntries = 0;
+        while (ntries < 10 && server.Pending()) {
+            Thread.Sleep(1000);
+            ntries++;
+        }
+
+        if (ntries == 10) {
+            Console.WriteLine("We abort wait since there are yet pending connection requests");
+        }
+        else {
+            Console.WriteLine("No pending requests with ntries = {0}", ntries);
+        }
+
+
+        cts.Cancel();
+
+        listenTask.Wait();
 
         server.Stop();
         logger.Stop();
 
         Console.WriteLine("--- processed requests: {0}", requestCount);
 
-        Thread.Sleep(10000);
+       
         // What Happens to current active connections?
     }
 }
