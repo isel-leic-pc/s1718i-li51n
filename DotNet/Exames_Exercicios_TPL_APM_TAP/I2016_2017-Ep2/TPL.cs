@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace V2016_2017 {
+namespace I2016_2017 {
     class TPL {
         public static T SearchItem<T>(IEnumerable<T> items, Predicate<T> query, int timeout) {
             var cts = new CancellationTokenSource();

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
  
 
-namespace V2016_2017 {
+namespace I2016_2017 {
     class Program {
         static void Main(string[] args) {
             int[] vals = { 7, 3, 5, 1, 9, 11, 13, 15, 17, 19, 4, 6};
